@@ -1,7 +1,15 @@
 import React from 'react';
-const Stat =()=>{
+
+import Foot from '../views/global/Food'
+import DataList from '../views/local/DataList'
+const Stat =(props)=>{
+    const{statData}=props
 return(
-    <></>
+    <>
+    
+    <DataList data={statData} />
+    <Foot></Foot>
+    </>
 );
 
 }

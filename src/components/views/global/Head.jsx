@@ -13,15 +13,18 @@ cursor: 'pointer',
 marginLeft: '10px'
 }
 
-const Head =()=>{
+const Head =(props)=>{
+
+const {action} = props
+
 return(
     <>
     <HeaderContainer>
 
 <HeaderCSS.Logo>FINMANAGER</HeaderCSS.Logo>
 <HeaderCSS.MenuContainer>
-    <button style={buttonCSS}>Главная</button>
-    <button style={buttonCSS}>Статистика</button>
+    <button onClick={()=>action('main')} style={buttonCSS}>Главная</button>
+    <button onClick={()=>action('stat')} style={buttonCSS}>Статистика</button>
     <button style={buttonCSS}>Планирование</button>
 </HeaderCSS.MenuContainer>
 

@@ -6,6 +6,8 @@ import css from '../../styles/form.css'
 
 const { Input } = css;
 
+//const [ placeholder, setPlaceholder ] =useState
+
 // const object={
 //     one:20,
 //     two: 30,
