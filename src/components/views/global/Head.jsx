@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import css from '../../../styles/styles.css';
 
 
@@ -23,9 +24,9 @@ return(
 
 <HeaderCSS.Logo>FINMANAGER</HeaderCSS.Logo>
 <HeaderCSS.MenuContainer>
-    <button onClick={()=>action('main')} style={buttonCSS}>Главная</button>
-    <button onClick={()=>action('stat')} style={buttonCSS}>Статистика</button>
-    <button style={buttonCSS}>Планирование</button>
+    <button onClick={()=>false && action('main')} style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/main'}>Главная</Link></button>
+    <button onClick={()=>false && action('stat')} style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/stat'}>Статистика</Link></button>
+    <button onClick={()=>false && action('plan')}style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/plan'}>Планирование</Link></button>
 </HeaderCSS.MenuContainer>
 
     </HeaderContainer>
