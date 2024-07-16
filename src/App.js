@@ -20,12 +20,12 @@ const[data, setData]=useState([])
           element={<Main action={setData}/>}
         />
         <Route
-          path={'/stat/:viewType'}
+          path={'/stat'}
           element={<Stat statData={data}/>}
         />
         <Route
           path={'/plan'}
-          element={<Plan statData={data}/>}
+          element={<Plan/>}
         />
       
 
