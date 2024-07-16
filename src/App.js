@@ -7,8 +7,8 @@ import Stat from './components/pages/Stat';
 import Plan from './components/pages/Plan'
 
 function App() {
+  const [ ,setShowPage ] = useState('main')
 
-const[showPage, setShowPage]=useState('main')
 const[data, setData]=useState([])
   return (
    <>
@@ -17,16 +17,18 @@ const[data, setData]=useState([])
       <Routes>
         <Route
           path={'/main'}
-          element={<Main />}
+          element={<Main action={setData}/>}
         />
         <Route
           path={'/stat/:viewType'}
-          element={<Stat />}
+          element={<Stat statData={data}/>}
         />
         <Route
           path={'/plan'}
-          element={<Plan/>}
+          element={<Plan statData={data}/>}
         />
+      
+
         {/* <Route
           path={'*'}
           element={<Main action={setData}/>  />} */}
@@ -36,11 +38,7 @@ const[data, setData]=useState([])
 
 
 
-   {/* {showPage==='main'
-   ?<Main action={setData}></Main>
-   : showPage === 'stat'
-   ?<Stat statData={data}></Stat>
-   :<Plan></Plan>} */}
+  
    </>
   );
 }

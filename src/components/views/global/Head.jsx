@@ -14,9 +14,9 @@ cursor: 'pointer',
 marginLeft: '10px'
 }
 
-const Head =(props)=>{
+const Head =()=>{
 
-const {action} = props
+
 
 return(
     <>
@@ -24,9 +24,9 @@ return(
 
 <HeaderCSS.Logo>FINMANAGER</HeaderCSS.Logo>
 <HeaderCSS.MenuContainer>
-    <button onClick={()=>false && action('main')} style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/main'}>Главная</Link></button>
-    <button onClick={()=>false && action('stat')} style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/stat'}>Статистика</Link></button>
-    <button onClick={()=>false && action('plan')}style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/plan'}>Планирование</Link></button>
+    <button  style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/main'}>Главная</Link></button>
+    <button  style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/stat'}>Статистика</Link></button>
+    <button style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/plan'}>Планирование</Link></button>
 </HeaderCSS.MenuContainer>
 
     </HeaderContainer>
