@@ -24,7 +24,7 @@ const[data, setData]=useState([])
           element={<Stat statData={data}/>}
         />
         <Route
-          path={'/plan'}
+          path={'/plan/:demoparam'}
           element={<Plan/>}
         />
       

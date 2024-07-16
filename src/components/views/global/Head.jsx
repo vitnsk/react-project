@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import css from '../../../styles/styles.css';
 
 
@@ -14,8 +14,8 @@ cursor: 'pointer',
 marginLeft: '10px'
 }
 
-const Head =()=>{
-
+const Head = () =>{
+const navigate = useNavigate();
 
 
 return(
@@ -24,9 +24,9 @@ return(
 
 <HeaderCSS.Logo>FINMANAGER</HeaderCSS.Logo>
 <HeaderCSS.MenuContainer>
-    <button  style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/main'}>Главная</Link></button>
-    <button  style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/stat'}>Статистика</Link></button>
-    <button style={buttonCSS}><Link style={{color:'inherit', textDecoration: 'none'}} to={'/plan'}>Планирование</Link></button>
+    <button  onClick={()=>navigate('/main')} style={buttonCSS}>Главная</button>
+    <button  onClick={()=>navigate('/stat')} style={buttonCSS}>Статистика</button>
+    <button onClick={()=>navigate('/plan/hello')} style={buttonCSS}>Планирование</button>
 </HeaderCSS.MenuContainer>
 
     </HeaderContainer>
