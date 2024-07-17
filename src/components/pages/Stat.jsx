@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {useParams} from 'react-router-dom'
 import Foot from '../views/global/Food'
 import DataList from '../views/local/DataList'
 import DataChart from '../views/local/DataChart';
@@ -6,10 +7,11 @@ import DataChart from '../views/local/DataChart';
 const Stat =(props)=>{
     const{statData}=props
     const [ isShowChart, setIsShowChart ] = useState(true)
+    const {viewType} = useParams();
 return(
     <>    
-    <DataList setShow={setIsShowChart} data={statData} />
-    <DataChart show={isShowChart} data={statData}/>
+    <DataList viewType={viewType} setShow={setIsShowChart} data={statData} />
+    <DataChart viewType={viewType} show={isShowChart} data={statData}/>
     <Foot></Foot>
     </>
 );

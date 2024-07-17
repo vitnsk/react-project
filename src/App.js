@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import Head from './components/views/global/Head'
@@ -20,18 +21,18 @@ const[data, setData]=useState([])
           element={<Main action={setData}/>}
         />
         <Route
-          path={'/stat'}
+          path={'/stat/:viewType'}
           element={<Stat statData={data}/>}
         />
         <Route
-          path={'/plan/:demoparam'}
+          path={'/plan'}
           element={<Plan/>}
         />
       
 
-        {/* <Route
+        <Route
           path={'*'}
-          element={<Main action={setData}/>  />} */}
+          element={<Main action={setData}/>}  />
        
       </Routes>
 

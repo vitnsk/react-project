@@ -25,8 +25,8 @@ return(
 <HeaderCSS.Logo>FINMANAGER</HeaderCSS.Logo>
 <HeaderCSS.MenuContainer>
     <button  onClick={()=>navigate('/main')} style={buttonCSS}>Главная</button>
-    <button  onClick={()=>navigate('/stat')} style={buttonCSS}>Статистика</button>
-    <button onClick={()=>navigate('/plan/hello')} style={buttonCSS}>Планирование</button>
+    <button  onClick={()=>navigate('/stat/расход')} style={buttonCSS}>Статистика</button>
+    <button onClick={()=>navigate('/plan')} style={buttonCSS}>Планирование</button>
 </HeaderCSS.MenuContainer>
 
     </HeaderContainer>
