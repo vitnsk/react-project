@@ -26,7 +26,7 @@ const[data, setData]=useState([])
         />
         <Route
           path={'/plan'}
-          element={<Plan/>}
+          element={<Plan testProp={'nok'}/>}
         />
       
 

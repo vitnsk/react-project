@@ -1,20 +1,24 @@
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 
 
-const Plan =()=>{
-const [time, setTime]=useState()
-
-useEffect(()=>{
-setInterval(()=> setTime(new Date().toLocaleString()),1000)
-},[])
-
+export default class Plan extends React.Component{
+constructor (props){
+super(props)
+this.state={
+    age:27,
+    city:'NNN'
+}
+}
+render(){
 return(
     <>
-
-    <span style={{display: 'block', marginTop: '100px', marginLeft: '100px'}}>страница планирования</span>
-    <span style={{display: 'block', marginTop: '100px', marginLeft: '100px'}}>текущее время -{time}</span>
+    <span>добро пожаловать, {this.props.testProp}  вам {this.state.age} вы из города {this.state.city}</span>
+    <button onClick={()=>this.setState({age:30})}>Изменить возраст</button>
     </>
-);
+)
 
 }
-export default Plan;
+
+
+
+}
