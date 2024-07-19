@@ -8,17 +8,22 @@ this.state={
     age:27,
     city:'NNN'
 }
+//this.changeAge=this.changeAge.bind(this)
+}
+
+//changeAge(){
+    changeAge=()=>{  
+    this.setState({age: 30})
 }
 render(){
 return(
     <>
     <span>добро пожаловать, {this.props.testProp}  вам {this.state.age} вы из города {this.state.city}</span>
-    <button onClick={()=>this.setState({age:30})}>Изменить возраст</button>
+    {/* <button onClick={()=>this.setState((prevState,props)=>({age: prevState.age+4}))}>Изменить возраст</button> */}
+    <button onClick={this.changeAge}>Изменить возраст</button>
     </>
 )
 
 }
-
-
 
 }
