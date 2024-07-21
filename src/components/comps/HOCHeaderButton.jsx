@@ -5,14 +5,16 @@ const HOCButton = (ButtonComponent) => {
   return (props) => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
-    // const onClick = () => {
-    //   navigate(props.text)
-    //   props.onClick()
-    // }
+    const onClick = () => {
+      navigate(props.text)
+    
+      props.onClick()
+    }
 
-    // return <ButtonComponent {...props} onClick={onClick}/>
+    return <ButtonComponent {...props} onClick={onClick}/>
+   
   }
 }
 
