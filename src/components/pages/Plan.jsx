@@ -1,29 +1,26 @@
 import React from 'react';
 
+import Foot from '../views/global/Food'
+import DataList from '../views/local/DataList'
 
 export default class Plan extends React.Component{
+
 constructor (props){
-super(props)
-this.state={
-    age:27,
-    city:'NNN'
-}
-//this.changeAge=this.changeAge.bind(this)
+    super(props)
 }
 
-//changeAge(){
-    changeAge=()=>{  
-    this.setState({age: 30})
-}
+
 render(){
 return(
     <>
-    <span>добро пожаловать, {this.props.testProp}  вам {this.state.age} вы из города {this.state.city}</span>
-    {/* <button onClick={()=>this.setState((prevState,props)=>({age: prevState.age+4}))}>Изменить возраст</button> */}
-    <button onClick={this.changeAge}>Изменить возраст</button>
+    <span>страница планирования</span>
+      
+    <DataList viewType={'расход'}  data={this.props.statData} />
+
+    <Foot></Foot>
+    
     </>
 )
 
 }
-
 }

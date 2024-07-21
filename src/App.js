@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setData as setDataFromRedux } from './redux-store/redusers/data'
 
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
@@ -10,7 +12,11 @@ import Plan from './components/pages/Plan'
 function App() {
   const [ ,setShowPage ] = useState('main')
 
-const[data, setData]=useState([])
+
+  const data = useSelector(state => state.dataReducer.data)
+  const dispatch = useDispatch()
+  const setData = (param) => dispatch(setDataFromRedux(param))
+
   return (
    <>
    
@@ -26,7 +32,7 @@ const[data, setData]=useState([])
         />
         <Route
           path={'/plan'}
-          element={<Plan statData={data} testProp={'nok'}/>}
+          element={<Plan statData={data} />}
         />
       
 
