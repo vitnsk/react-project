@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useCallback,useEffect } from "react";
 //import { useEffect,  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import css from "../../../styles/dataList.css";
@@ -15,7 +15,7 @@ const dataSumm = (paramData, view) => {
     }, 0)
 
   console.log('посчитана сумма')
-  //console.log(returned)
+  console.log(returned)
   return returned
 
 }
@@ -33,7 +33,8 @@ const [bold, setBold]=useState(false)
 // return summ + +(item.split('::')[0].split(' ')[0] + item.split('::')[0].split(' ')[1])
 //   }, 0)
 //const filterDataSumm = dataSumm(data, viewType)
-const filterDataSumm = useMemo(() => dataSumm(data, viewType), [ data, viewType ])
+//const filterDataSumm = useMemo(() => dataSumm(data, viewType), [ data, viewType ])
+const filterDataSumm = useCallback(() => dataSumm(data, viewType), [ data, viewType ])
   const filterDataDelta = data
   .reduce((summ, item) => {
 
@@ -59,7 +60,7 @@ const filterDataSumm = useMemo(() => dataSumm(data, viewType), [ data, viewType 
 const reduceDataType3=()=> navigate ('/stat/общее')
 
 //useEffect(()=>{},[])
-
+useEffect(() => { filterDataSumm() }, [ filterDataSumm ])
   return (
     <>
 <ButtonsLine>
